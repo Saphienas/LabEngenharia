@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Cadastro de Exemplares</title>
+		
+	     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	     <link type="text/css" rel="stylesheet" href="css/materialize.css"/>
+	     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		
+		
+	</head>
+   <body>
+      	
+   	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+	<script src="js/init.js"></script>
+	<script src="js/valida.js"></script>
+	
+	<script>
+		$(function(){
+		     $(".button-collapse").sideNav();
+		 });
+	</script>
+	
+     <header>
+			<nav>
+			    <div class="nav-wrapper">
+			        <a href="#" class="brand-logo">Estante Virtual</a>
+			        <a href="#" data-activates="menu-mobile" class="button-collapse">
+			            <i class="material-icons">menu</i>
+			        </a>
+			        <ul class="right hide-on-med-and-down">
+			            <li><a href="Home.html">Home</a></li>			            
+			            <li><a href="Cadastro.html">Novo Exemplar</a></li>
+			            <li><a href="Consulta.jsp">Consulta de Exemplar</a></li>
+			            <li><a href="Instrucoes.html">Instruções de uso</a></li>
+			        </ul>
+			        <ul class="side-nav" id="menu-mobile">
+			            <li><a href="Home.html">Home</a></li>			            
+			            <li><a href="Cadastro.html">Novo Exemplar</a></li>
+			            <li><a href="Consulta.jsp">Consulta de Exemplar</a></li>
+			            <li><a href="Instrucoes.html">Instruções de uso</a></li>
+			        </ul>
+			    </div>
+			</nav>
+     </header>
+     
+      <h1 class="center-align">Adicionando a Coleção</h1>
+	  <div class="row">
+	    <div class="input-field col s6">
+	      	<form action="exemplarController" method="post" >
+	     		
+	     		<input type="hidden" name="Metodo" value="AdicionaExemplar"/>		     		
+		       		<div class="input-field col s8">
+			       		<input type="text" class="validate" name="nome" placeholder="Harry Potter"  id="nomeExemplar" required maxlength="99"/>
+			       		<label class="active" for="nomeExemplar">Nome</label>
+		       		</div>
+		       		<div class="input-field col s8">
+				   		<input type="number" class="validate" name="edicao" placeholder="001" id="edicaoExemplar" required maxlength="6" onkeypress='return SomenteNumero(event)'/>
+				   		<label class="active" for="edicaoExemplar">Edição</label> 
+			   		</div>
+			   		<div class="input-field col s8">
+				      	<input type="number" name="preco" class="validate" placeholder="10" id="precoExemplar" required maxlength="8" onkeypress='return SomenteNumero(event)'/>
+				      	<label class="active" for="precoExemplar">Preço</label> 
+			      	</div>
+			      	
+			      	<div class="input-field col s8">
+				      	<input type="text" name="editora" class="validate" placeholder="Racco" id="editoraExemplar" required maxlength="29"/>
+				      	<label class="active" for="editoraExemplar">Editora</label> 
+			      	</div>
+			      	
+			      	<div class="input-field col s8">
+				      	<input type="text" name="autor" class="validate" placeholder="J.K.Rowling" id="autorExemplar" required maxlength="49"/>
+				      	<label class="active" for="autorExemplar">Autor</label> 
+			      	</div>
+			      	
+			      	<div class="input-field col s8">
+				      	<input type="number" name="totalP" class="validate" placeholder="458" id="totalExemplar" required  maxlength="4" onkeypress='return SomenteNumero(event)'>
+				      	<label class="active" for="totalExemplar">Paginas Totais</label> 
+			      	</div>
+			      	
+			      	<div class="input-field col s8">
+				      	<input type="number" name="atualP" class="validate" placeholder="015" id="atualExemplar" required  maxlength="4" onkeypress='return SomenteNumero(event)'/>
+				      	<label class="active" for="atualExemplar">Pagina Atual</label> 
+			      	</div>
+		      		
+		      		<div class="input-field col s8">
+		      	  		<button class="btn waves-effect waves-light" type="submit" name="action" >Submit</button>
+		      		</div>
+     		</form>
+		</div>
+	  </div>
+	  
+	  	  
+        <footer class="page-footer">
+          <div class="container">
+            
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">HQ NOW</h5>
+                <p class="grey-text text-lighten-4">Projeto produzido para a disciplina de Laboratorio de Engenharia de Software</p>
+              </div>
+            </div>
+            
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2017 Willian Guedes da Silva Cunha
+            <a class="grey-text text-lighten-4 right" href="Instrucoes.html">Tutorial do Sistema</a>
+            </div>
+          </div>
+          
+        </footer>
+   </body>
+ </html>
